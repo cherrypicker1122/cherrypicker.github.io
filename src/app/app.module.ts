@@ -11,11 +11,15 @@ import {MatListModule} from '@angular/material/list';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
+import { HeaderComponent } from './header/header.component';
+import { SideNavContentComponent } from './side-nav-content/side-nav-content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SideNavComponent],
+    SideNavComponent,
+    HeaderComponent,
+    SideNavContentComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

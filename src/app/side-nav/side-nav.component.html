@@ -1,30 +1,23 @@
-<p>
-부끄럽고 창피하다 
-세상 사람들 다 아는데
-나만 모르는 것 같다
+<!-- side bar main wrapper -->
+<div class="side-nav-bar"
+    [ngClass]="{ 'side-nav-bar-collapsed': !(showSideNav | async) }">
+    
+    <!-- overlay -->
+    <div class="side-nav-bar-overlay" 
+    [ngStyle]="{ 'transition': 'background-color ' + duration + 's, visibility ' + duration + 's' }"
+    [ngClass]="{ 'side-nav-bar-overlay-collapsed': !(showSideNav | async) }"
+        (click)="onSidebarClose()"></div>
+    
+    <!-- side bar-->
+    <div class="side-nav-bar-menu-container" 
+    [ngStyle]="getSideNavBarStyle((showSideNav | async))">
+        
+        <!-- close button -->
+        <div><span class="material-icons side-nav-bar-close" (click)="onSidebarClose()">clear</span></div>
 
-내가 할 줄 아는 게 이것 밖에 없으니까
-썩은 나무 인줄 알면서도 조금이라도 발 내딛을 수밖에 없다 
-</p>
-<!--<mat-toolbar color="primary">
-  <button mat-icon-button aria-label="Menu icon" (click)="toggleMenu()">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <h1>Responsive Material Sidenavigation</h1>
-</mat-toolbar>
-<mat-sidenav-container autosize>
-    <mat-sidenav  [mode]="isMobile ? 'over' : 'side'" [opened]="isMobile ? 'false' : 'true'">
-      <mat-nav-list>
-        <a mat-list-item>
-          <span class="entry">
-            <mat-icon>house</mat-icon>
-            <span *ngIf="!isCollapsed">Dashboard</span>
-          </span>
-        </a>
-      </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content>
-      <h2>Content</h2>
-      <router-outlet></router-outlet>
-    </mat-sidenav-content>
-  </mat-sidenav-container>-->
+        <!-- side bar content -->
+        <div class="side-nav-bar-content-container">
+            <ng-container *ngTemplateOutlet="sidenavTemplateRef"></ng-container>
+        </div>
+    </div>
+</div>

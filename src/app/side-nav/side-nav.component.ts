@@ -1,43 +1,41 @@
-import { BreakpointObserver } from '@angular/cdk/layout';
-import {
-  Component,
-  ViewChild,
-} from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
+import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
+import { Observable } from 'rxjs';
+import { SideNavDirection } from './side-nav-direction';
+import { NavigationService } from './side-nav.navigation.service';
 
 @Component({
   selector: 'app-side-nav',
   templateUrl: './side-nav.component.html',
-  styleUrls: ['./side-nav.component.css']
+  styleUrls: ['./side-nav.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
-export class SideNavComponent {
-  title = 'material-responsive-sidenav';
-  @ViewChild(MatSidenav)
-  sidenav!: MatSidenav;
-  isMobile= true;
-  isCollapsed = true;
+export class SideNavComponent implements OnInit {
 
+  showSideNav: Observable<boolean> | undefined;
 
-  constructor(private observer: BreakpointObserver) {}
+  @Input() sidenavTemplateRef: any;
+  @Input() duration: number = 0.25;
+  @Input() navWidth: number = window.innerWidth;
+  @Input() direction: string = 'left';
+  //SideNavDirection = SideNavDirection.Left;
+  
+  constructor(private navService: NavigationService){}
 
-  ngOnInit() {
-    this.observer.observe(['(max-width: 800px)']).subscribe((screenSize) => {
-      if(screenSize.matches){
-        this.isMobile = true;
-      } else {
-        this.isMobile = false;
-      }
-    });
+  ngOnInit(): void {
+    this.showSideNav = this.navService.getShowNav();
   }
 
-  toggleMenu() {
-    if(this.isMobile){
-      this.sidenav.toggle();
-      this.isCollapsed = false; // On mobile, the menu can never be collapsed
-    } else {
-      this.sidenav.open(); // On desktop/tablet, the menu can never be fully closed
-      this.isCollapsed = !this.isCollapsed;
-    }
+  onSidebarClose() {
+    this.navService.setShowNav(false);
   }
 
+  getSideNavBarStyle(showNav: boolean | null) {
+    let navBarStyle: any = {};
+    
+    navBarStyle.transition = this.direction + ' ' + this.duration + 's, visibility ' + this.duration + 's';
+    navBarStyle.width = this.navWidth + 'px';
+    navBarStyle[this.direction] = (showNav ? 0 : (this.navWidth * -1)) + 'px';
+    
+    return navBarStyle;
+  }
 }
