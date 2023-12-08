@@ -13,13 +13,19 @@ import { AppComponent } from './app.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { HeaderComponent } from './header/header.component';
 import { SideNavContentComponent } from './side-nav-content/side-nav-content.component';
+import { DailyComponent } from './pages/daily/daily.component';
+import { WritingComponent } from './pages/writing/writing.component';
+import { CommonModule } from '@angular/common';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     SideNavComponent,
     HeaderComponent,
-    SideNavContentComponent],
+    SideNavContentComponent,
+    DailyComponent,
+    WritingComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -28,7 +34,8 @@ import { SideNavContentComponent } from './side-nav-content/side-nav-content.com
     MatButtonModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
