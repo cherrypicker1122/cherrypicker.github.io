@@ -1,5 +1,7 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
+import { NavigationService } from '../side-nav/side-nav.navigation.service';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-side-nav-content',
@@ -14,12 +16,19 @@ export class SideNavContentComponent implements OnInit {
     { label: 'd', route: '/daily'}
   ];
 
-  constructor(private router: Router) { }
+  showSideNav: Observable<boolean> | undefined;
+
+  constructor(private router: Router,
+    private navService: NavigationService) { }
 
   ngOnInit(): void {
+    this.showSideNav = this.navService.getShowNav();
+
   }
 
   onNavigationSelection(navItem: any) {
+    this.navService.setShowNav(false);
+    //this.navService.setShowNav(false);
     this.router.navigate([navItem.route]);
   }
 
