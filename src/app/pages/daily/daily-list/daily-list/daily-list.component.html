@@ -1,0 +1,21 @@
+
+<div class="projcard-container">
+	<div *ngFor="let daily of dailyList">
+        <div class={{daily.color}}>
+            <div class="projcard-innerbox">
+                <img class="projcard-img" src={{daily.img}} />
+                <div class="projcard-textbox">
+                    <div class="projcard-title">{{daily.title}}</div>
+                    <div class="projcard-subtitle">{{daily.subtitle}}</div>
+                    <div class="projcard-bar"></div>
+                    <div class="projcard-description" style="white-space: pre-line">{{daily.description}}</div>
+                    <div class="projcard-tagbox">
+                        <div *ngFor="let tag of daily.tagList">
+                            <span class="projcard-tag">{{tag}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+</div>

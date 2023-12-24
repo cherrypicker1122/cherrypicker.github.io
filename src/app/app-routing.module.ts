@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { WritingComponent } from './pages/writing/writing.component';
 import { DailyComponent } from './pages/daily/daily.component';
+import { DailyListComponent } from './pages/daily/daily-list/daily-list/daily-list.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'write',
     component: WritingComponent
+  },
+  {
+    path: 'daily-list',
+    component: DailyListComponent
   },
   {
     path: 'daily',

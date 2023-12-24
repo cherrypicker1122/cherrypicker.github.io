@@ -13,7 +13,7 @@ export class SideNavContentComponent implements OnInit {
 
   navItems = [
     { label: '정리', route: '/write'},
-    { label: 'd', route: '/daily'}
+    { label: '-', route: '/daily-list'}
   ];
 
   showSideNav: Observable<boolean> | undefined;

@@ -16,6 +16,7 @@ import { SideNavContentComponent } from './side-nav-content/side-nav-content.com
 import { DailyComponent } from './pages/daily/daily.component';
 import { WritingComponent } from './pages/writing/writing.component';
 import { CommonModule } from '@angular/common';
+import { DailyListComponent } from './pages/daily/daily-list/daily-list/daily-list.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { CommonModule } from '@angular/common';
     HeaderComponent,
     SideNavContentComponent,
     DailyComponent,
-    WritingComponent],
+    WritingComponent,
+    DailyListComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

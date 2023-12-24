@@ -1,5 +1,10 @@
 <div class="side-nav-bar-content">
     <ul class="side-nav-bar-menu">
-        <li *ngFor="let navItem of navItems" (click)="onNavigationSelection(navItem)">{{ navItem.label }}</li>
+        <div *ngFor="let navItem of navItems">
+            <a (click)="onNavigationSelection(navItem)">
+                <mat-icon></mat-icon>
+                <span class='pl=3'>{{ navItem.label }}</span>
+            </a>   
+        </div>
     </ul>
 </div>
