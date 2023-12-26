@@ -6,4 +6,5 @@ export interface DailyModel {
     subtitle : string
     description : string
     tagList : Array<string>
+    dayago: string
 }
