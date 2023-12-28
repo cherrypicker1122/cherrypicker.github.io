@@ -13,7 +13,7 @@ export class DailyListComponent implements OnInit {
       img: "https://th.bing.com/th/id/OIP.4TmWsjC7iC0WK27mxTGbOgHaEK?rs=1&pid=ImgDetMain", // https://picsum.photos/800/600?image=1041
       title: "20231228",
       subtitle: "",
-      description: "되돌아보니 부끄럽고 챙피하다 \n ",
+      description: " \n ",
       tagList : [],
       date : new Date(),
       dayago: ""
