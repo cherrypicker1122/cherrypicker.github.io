@@ -15,7 +15,7 @@ export class DailyListComponent implements OnInit {
       subtitle: "",
       description: "가는 길이 통째로 잘못된 것 같다. 정신없이 왔는데 결국 아무 것도 남지 않았다. \n \
           부끄럽다. \n \
-          무엇이 어디서부터 잘못되었을까 ~ \n \ ",
+          무엇이 어디서부터 잘못되었을까 ",
       tagList : [],
       date : new Date(),
       dayago: ""
