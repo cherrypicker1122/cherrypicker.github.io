@@ -11,9 +11,11 @@ export class DailyListComponent implements OnInit {
   dailyList : Array<DailyModel> = [
     {
       img: "https://th.bing.com/th/id/OIP.4TmWsjC7iC0WK27mxTGbOgHaEK?rs=1&pid=ImgDetMain", // https://picsum.photos/800/600?image=1041
-      title: "20231228",
+      title: "20240102",
       subtitle: "",
-      description: " \n ",
+      description: "가는 길이 통째로 잘못된 것 같다. 정신없이 왔는데 결국 아무 것도 남지 않았다. \n \
+          부끄럽다. \n \
+          무엇이 어디서부터 잘못되었을까 ~ \n \ ",
       tagList : [],
       date : new Date(),
       dayago: ""
