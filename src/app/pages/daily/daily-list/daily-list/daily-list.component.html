@@ -15,11 +15,13 @@
         <div class="blog-container">
         
           <div class="blog-header">
-            <div class="blog-author--no-cover">
-                <h3>pb</h3>
+            <div class="blog-cover" [ngStyle]="{ 'background': 'url('+daily.img+')' }">
+              <div class="blog-author">
+                <h3>k</h3>
+              </div>
             </div>
           </div>
-      
+        
           <div class="blog-body">
             <div class="blog-title">
               <h1><a href="#">{{daily.title}}</a></h1>
