@@ -13,7 +13,24 @@ export class DailyListComponent implements OnInit {
       img: "https://th.bing.com/th/id/OIP.4TmWsjC7iC0WK27mxTGbOgHaEK?rs=1&pid=ImgDetMain", // https://picsum.photos/800/600?image=1041
       title: "20240309",
       subtitle: "",
-      description: "참 쉽지않다 간절히 원하는게 너무 멀리있는 것 같은데 항상바라보기만 한다. ",
+      description: `되돌아 보니 부끄럽고 창피하다
+
+      세상 사람들 다 아는데
+      나만 모르는 것 같다
+      
+      말을 해도 귀 기울여주지 않는다
+      나조차도 나 같은 사람에게 관심이 없다<p>
+      세상 사람들 다 아는데<br/>
+      나만 모르는 것 같다<br/>
+      그치만 내가 할 줄 아는 게 이것 밖에 없으니까<br/>
+      썩은 나무 인줄 알지만<br/>
+      나도 알지만 썩은 나무 밟는 거 밖에 못해<br/>
+      </p>
+      누가 알아주길 바라는 마음이 얼마나 부질없고 쓸데없는 환상인지
+      
+      그럼에도 내가 할 줄 아는 게 이것 밖에 없으니까
+      썩은 나무 인줄 알면서도 조금이라도 발 내딛을 수밖에 없다
+      `,
       tagList : [],
       date : new Date(),
       dayago: ""
