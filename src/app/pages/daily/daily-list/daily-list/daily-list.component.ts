@@ -10,10 +10,10 @@ export class DailyListComponent implements OnInit {
 
   dailyList : Array<DailyModel> = [
     {
-      img: "https://picsum.photos/800/600?image=1041", 
-      title: "20240117",
+      img: "https://th.bing.com/th/id/OIP.4TmWsjC7iC0WK27mxTGbOgHaEK?rs=1&pid=ImgDetMain", // https://picsum.photos/800/600?image=1041
+      title: "20240309",
       subtitle: "",
-      description: "TEST",
+      description: "참 쉽지않다 간절히 원하는게 너무 멀리있는 것 같은데 항상바라보기만 한다. ",
       tagList : [],
       date : new Date(),
       dayago: ""
